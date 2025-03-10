@@ -1,7 +1,7 @@
 <?php
-require_once 'classes/DBConnection.php';
-require_once 'classes/User.php'; 
-require_once 'classes/Session.php'; 
+require_once '../classes/DBConnection.php';
+require_once '../classes/User.php';
+require_once '../classes/Session.php';
 
 $session = new Session();
 if($session->has('user_id')){
@@ -25,8 +25,8 @@ echo "You must be logged in to view this page"; // change later , only for testi
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/vendor.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="../css/vendor.css">
+    <link rel="stylesheet" type="text/css" href="../style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -153,61 +153,61 @@ echo "You must be logged in to view this page"; // change later , only for testi
     
         <ul class="navbar-nav justify-content-end menu-list list-unstyled d-flex gap-md-3 mb-0">
           <li class="nav-item border-dashed active">
-            <a href="index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
+            <a href="../index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
               <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#fruits"></use></svg>
               <span>Fruits and vegetables</span>
             </a>
           </li>
           <li class="nav-item border-dashed">
-            <a href="index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
+            <a href="../index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
               <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#dairy"></use></svg>
               <span>Dairy and Eggs</span>
             </a>
           </li>
           <li class="nav-item border-dashed">
-            <a href="index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
+            <a href="../index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
               <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#meat"></use></svg>
               <span>Meat and Poultry</span>
             </a>
           </li>
           <li class="nav-item border-dashed">
-            <a href="index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
+            <a href="../index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
               <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#seafood"></use></svg>
               <span>Seafood</span>
             </a>
           </li>
           <li class="nav-item border-dashed">
-            <a href="index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
+            <a href="../index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
               <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#bakery"></use></svg>
               <span>Bakery and Bread</span>
             </a>
           </li>
           <li class="nav-item border-dashed">
-            <a href="index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
+            <a href="../index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
               <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#canned"></use></svg>
               <span>Canned Goods</span>
             </a>
           </li>
           <li class="nav-item border-dashed">
-            <a href="index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
+            <a href="../index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
               <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#frozen"></use></svg>
               <span>Frozen Foods</span>
             </a>
           </li>
           <li class="nav-item border-dashed">
-            <a href="index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
+            <a href="../index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
               <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#pasta"></use></svg>
               <span>Pasta and Rice</span>
             </a>
           </li>
           <li class="nav-item border-dashed">
-            <a href="index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
+            <a href="../index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
               <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#breakfast"></use></svg>
               <span>Breakfast Foods</span>
             </a>
           </li>
           <li class="nav-item border-dashed">
-            <a href="index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
+            <a href="../index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
               <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#snacks"></use></svg>
               <span>Snacks and Chips</span>
             </a>
@@ -221,45 +221,45 @@ echo "You must be logged in to view this page"; // change later , only for testi
             </button>
             <div class="collapse" id="beverages-collapse">
               <ul class="btn-toggle-nav list-unstyled fw-normal ps-5 pb-1">
-                <li class="border-bottom py-2"><a href="index.html" class="dropdown-item">Water</a></li>
-                <li class="border-bottom py-2"><a href="index.html" class="dropdown-item">Juice</a></li>
-                <li class="border-bottom py-2"><a href="index.html" class="dropdown-item">Soda</a></li>
-                <li class="border-bottom py-2"><a href="index.html" class="dropdown-item">Tea</a></li>
+                <li class="border-bottom py-2"><a href="../index.html" class="dropdown-item">Water</a></li>
+                <li class="border-bottom py-2"><a href="../index.html" class="dropdown-item">Juice</a></li>
+                <li class="border-bottom py-2"><a href="../index.html" class="dropdown-item">Soda</a></li>
+                <li class="border-bottom py-2"><a href="../index.html" class="dropdown-item">Tea</a></li>
               </ul>
             </div>
           </li>
           <li class="nav-item border-dashed">
-            <a href="index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
+            <a href="../index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
               <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#spices"></use></svg>
               <span>Spices and Seasonings</span>
             </a>
           </li>
           <li class="nav-item border-dashed">
-            <a href="index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
+            <a href="../index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
               <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#baby"></use></svg>
               <span>Baby Food and Formula</span>
             </a>
           </li>
           <li class="nav-item border-dashed">
-            <a href="index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
+            <a href="../index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
               <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#health"></use></svg>
               <span>Health and Wellness</span>
             </a>
           </li>
           <li class="nav-item border-dashed">
-            <a href="index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
+            <a href="../index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
               <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#household"></use></svg>
               <span>Household Supplies</span>
             </a>
           </li>
           <li class="nav-item border-dashed">
-            <a href="index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
+            <a href="../index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
               <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#personal"></use></svg>
               <span>Personal Care</span>
             </a>
           </li>
           <li class="nav-item border-dashed">
-            <a href="index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
+            <a href="../index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
               <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#pet"></use></svg>
               <span>Pet Food and Supplies</span>
             </a>
@@ -276,8 +276,8 @@ echo "You must be logged in to view this page"; // change later , only for testi
           
           <div class="col-sm-4 col-lg-2 text-center text-sm-start d-flex gap-3 justify-content-center justify-content-md-start">
             <div class="d-flex align-items-center my-3 my-sm-0">
-              <a href="index.html">
-                <img src="images/logo.svg" alt="logo" class="img-fluid">
+              <a href="../index.html">
+                <img src="../images/logo.svg" alt="logo" class="img-fluid">
               </a>
             </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
@@ -297,7 +297,7 @@ echo "You must be logged in to view this page"; // change later , only for testi
                 </select>
               </div>
               <div class="col-11 col-md-7">
-                <form id="search-form" class="text-center" action="index.html" method="post">
+                <form id="search-form" class="text-center" action="../index.html" method="post">
                   <input type="text" class="form-control border-0 bg-transparent" placeholder="Search for more than 20,000 products">
                 </form>
               </div>
@@ -310,23 +310,23 @@ echo "You must be logged in to view this page"; // change later , only for testi
           <div class="col-lg-4">
             <ul class="navbar-nav list-unstyled d-flex flex-row gap-3 gap-lg-5 justify-content-center flex-wrap align-items-center mb-0 fw-bold text-uppercase text-dark">
               <li class="nav-item active">
-                <a href="index.html" class="nav-link">Home</a>
+                <a href="../index.html" class="nav-link">Home</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle pe-3" role="button" id="pages" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
                 <ul class="dropdown-menu border-0 p-3 rounded-0 shadow" aria-labelledby="pages">
-                  <li><a href="index.html" class="dropdown-item">About Us </a></li>
-                  <li><a href="index.html" class="dropdown-item">Shop </a></li>
-                  <li><a href="index.html" class="dropdown-item">Single Product </a></li>
-                  <li><a href="index.html" class="dropdown-item">Cart </a></li>
-                  <li><a href="index.html" class="dropdown-item">Checkout </a></li>
-                  <li><a href="index.html" class="dropdown-item">Blog </a></li>
-                  <li><a href="index.html" class="dropdown-item">Single Post </a></li>
-                  <li><a href="index.html" class="dropdown-item">Styles </a></li>
-                  <li><a href="index.html" class="dropdown-item">Contact </a></li>
-                  <li><a href="index.html" class="dropdown-item">Thank You </a></li>
-                  <li><a href="index.html" class="dropdown-item">My Account </a></li>
-                  <li><a href="index.html" class="dropdown-item">404 Error </a></li>
+                  <li><a href="../index.html" class="dropdown-item">About Us </a></li>
+                  <li><a href="../index.html" class="dropdown-item">Shop </a></li>
+                  <li><a href="../index.html" class="dropdown-item">Single Product </a></li>
+                  <li><a href="../index.html" class="dropdown-item">Cart </a></li>
+                  <li><a href="../index.html" class="dropdown-item">Checkout </a></li>
+                  <li><a href="../index.html" class="dropdown-item">Blog </a></li>
+                  <li><a href="../index.html" class="dropdown-item">Single Post </a></li>
+                  <li><a href="../index.html" class="dropdown-item">Styles </a></li>
+                  <li><a href="../index.html" class="dropdown-item">Contact </a></li>
+                  <li><a href="../index.html" class="dropdown-item">Thank You </a></li>
+                  <li><a href="../index.html" class="dropdown-item">My Account </a></li>
+                  <li><a href="../index.html" class="dropdown-item">404 Error </a></li>
                 </ul>
               </li>
             </ul>
@@ -356,7 +356,7 @@ echo "You must be logged in to view this page"; // change later , only for testi
       </div>
     </header>
     
-    <section style="background-image: url('images/banner-1.jpg');background-repeat: no-repeat;background-size: cover;">
+    <section style="background-image: url('../images/banner-1.jpg');background-repeat: no-repeat;background-size: cover;">
       <div class="container-lg">
         <div class="row">
           <div class="col-lg-6 pt-5 mt-5">
@@ -465,51 +465,51 @@ echo "You must be logged in to view this page"; // change later , only for testi
             <div class="category-carousel swiper">
               <div class="swiper-wrapper">
                 <a href="category.html" class="nav-link swiper-slide text-center">
-                  <img src="images/category-thumb-1.jpg" class="rounded-circle" alt="Category Thumbnail">
+                  <img src="../images/category-thumb-1.jpg" class="rounded-circle" alt="Category Thumbnail">
                   <h4 class="fs-6 mt-3 fw-normal category-title">Fruits & Veges</h4>
                 </a>
                 <a href="category.html" class="nav-link swiper-slide text-center">
-                  <img src="images/category-thumb-2.jpg" class="rounded-circle" alt="Category Thumbnail">
+                  <img src="../images/category-thumb-2.jpg" class="rounded-circle" alt="Category Thumbnail">
                   <h4 class="fs-6 mt-3 fw-normal category-title">Breads & Sweets</h4>
                 </a>
                 <a href="category.html" class="nav-link swiper-slide text-center">
-                  <img src="images/category-thumb-3.jpg" class="rounded-circle" alt="Category Thumbnail">
+                  <img src="../images/category-thumb-3.jpg" class="rounded-circle" alt="Category Thumbnail">
                   <h4 class="fs-6 mt-3 fw-normal category-title">Fruits & Veges</h4>
                 </a>
                 <a href="category.html" class="nav-link swiper-slide text-center">
-                  <img src="images/category-thumb-4.jpg" class="rounded-circle" alt="Category Thumbnail">
+                  <img src="../images/category-thumb-4.jpg" class="rounded-circle" alt="Category Thumbnail">
                   <h4 class="fs-6 mt-3 fw-normal category-title">Beverages</h4>
                 </a>
                 <a href="category.html" class="nav-link swiper-slide text-center">
-                  <img src="images/category-thumb-5.jpg" class="rounded-circle" alt="Category Thumbnail">
+                  <img src="../images/category-thumb-5.jpg" class="rounded-circle" alt="Category Thumbnail">
                   <h4 class="fs-6 mt-3 fw-normal category-title">Meat Products</h4>
                 </a>
                 <a href="category.html" class="nav-link swiper-slide text-center">
-                  <img src="images/category-thumb-6.jpg" class="rounded-circle" alt="Category Thumbnail">
+                  <img src="../images/category-thumb-6.jpg" class="rounded-circle" alt="Category Thumbnail">
                   <h4 class="fs-6 mt-3 fw-normal category-title">Breads</h4>
                 </a>
                 <a href="category.html" class="nav-link swiper-slide text-center">
-                  <img src="images/category-thumb-7.jpg" class="rounded-circle" alt="Category Thumbnail">
+                  <img src="../images/category-thumb-7.jpg" class="rounded-circle" alt="Category Thumbnail">
                   <h4 class="fs-6 mt-3 fw-normal category-title">Fruits & Veges</h4>
                 </a>
                 <a href="category.html" class="nav-link swiper-slide text-center">
-                  <img src="images/category-thumb-8.jpg" class="rounded-circle" alt="Category Thumbnail">
+                  <img src="../images/category-thumb-8.jpg" class="rounded-circle" alt="Category Thumbnail">
                   <h4 class="fs-6 mt-3 fw-normal category-title">Breads & Sweets</h4>
                 </a>
                 <a href="category.html" class="nav-link swiper-slide text-center">
-                  <img src="images/category-thumb-1.jpg" class="rounded-circle" alt="Category Thumbnail">
+                  <img src="../images/category-thumb-1.jpg" class="rounded-circle" alt="Category Thumbnail">
                   <h4 class="fs-6 mt-3 fw-normal category-title">Fruits & Veges</h4>
                 </a>
                 <a href="category.html" class="nav-link swiper-slide text-center">
-                  <img src="images/category-thumb-1.jpg" class="rounded-circle" alt="Category Thumbnail">
+                  <img src="../images/category-thumb-1.jpg" class="rounded-circle" alt="Category Thumbnail">
                   <h4 class="fs-6 mt-3 fw-normal category-title">Beverages</h4>
                 </a>
                 <a href="category.html" class="nav-link swiper-slide text-center">
-                  <img src="images/category-thumb-1.jpg" class="rounded-circle" alt="Category Thumbnail">
+                  <img src="../images/category-thumb-1.jpg" class="rounded-circle" alt="Category Thumbnail">
                   <h4 class="fs-6 mt-3 fw-normal category-title">Meat Products</h4>
                 </a>
                 <a href="category.html" class="nav-link swiper-slide text-center">
-                  <img src="images/category-thumb-1.jpg" class="rounded-circle" alt="Category Thumbnail">
+                  <img src="../images/category-thumb-1.jpg" class="rounded-circle" alt="Category Thumbnail">
                   <h4 class="fs-6 mt-3 fw-normal category-title">Breads</h4>
                 </a>
                 
@@ -547,8 +547,8 @@ echo "You must be logged in to view this page"; // change later , only for testi
               <div class="col">
                 <div class="product-item">
                   <figure>
-                    <a href="index.html" title="Product Title">
-                      <img src="images/product-thumb-1.png" alt="Product Thumbnail" class="tab-image">
+                    <a href="../index.html" title="Product Title">
+                      <img src="../images/product-thumb-1.png" alt="Product Thumbnail" class="tab-image">
                     </a>
                   </figure>
                   <div class="d-flex flex-column text-center">
@@ -582,8 +582,8 @@ echo "You must be logged in to view this page"; // change later , only for testi
               <div class="col">
                 <div class="product-item">
                   <figure>
-                    <a href="index.html" title="Product Title">
-                      <img src="images/product-thumb-2.png" alt="Product Thumbnail" class="tab-image">
+                    <a href="../index.html" title="Product Title">
+                      <img src="../images/product-thumb-2.png" alt="Product Thumbnail" class="tab-image">
                     </a>
                   </figure>
                   <div class="d-flex flex-column text-center">
@@ -617,8 +617,8 @@ echo "You must be logged in to view this page"; // change later , only for testi
               <div class="col">
                 <div class="product-item">
                   <figure>
-                    <a href="index.html" title="Product Title">
-                      <img src="images/product-thumb-3.png" alt="Product Thumbnail" class="tab-image">
+                    <a href="../index.html" title="Product Title">
+                      <img src="../images/product-thumb-3.png" alt="Product Thumbnail" class="tab-image">
                     </a>
                   </figure>
                   <div class="d-flex flex-column text-center">
@@ -652,8 +652,8 @@ echo "You must be logged in to view this page"; // change later , only for testi
               <div class="col">
                 <div class="product-item">
                   <figure>
-                    <a href="index.html" title="Product Title">
-                      <img src="images/product-thumb-4.png" alt="Product Thumbnail" class="tab-image">
+                    <a href="../index.html" title="Product Title">
+                      <img src="../images/product-thumb-4.png" alt="Product Thumbnail" class="tab-image">
                     </a>
                   </figure>
                   <div class="d-flex flex-column text-center">
@@ -687,8 +687,8 @@ echo "You must be logged in to view this page"; // change later , only for testi
               <div class="col">
                 <div class="product-item">
                   <figure>
-                    <a href="index.html" title="Product Title">
-                      <img src="images/product-thumb-5.png" alt="Product Thumbnail" class="tab-image">
+                    <a href="../index.html" title="Product Title">
+                      <img src="../images/product-thumb-5.png" alt="Product Thumbnail" class="tab-image">
                     </a>
                   </figure>
                   <div class="d-flex flex-column text-center">
@@ -722,8 +722,8 @@ echo "You must be logged in to view this page"; // change later , only for testi
               <div class="col">
                 <div class="product-item">
                   <figure>
-                    <a href="index.html" title="Product Title">
-                      <img src="images/product-thumb-6.png" alt="Product Thumbnail" class="tab-image">
+                    <a href="../index.html" title="Product Title">
+                      <img src="../images/product-thumb-6.png" alt="Product Thumbnail" class="tab-image">
                     </a>
                   </figure>
                   <div class="d-flex flex-column text-center">
@@ -757,8 +757,8 @@ echo "You must be logged in to view this page"; // change later , only for testi
               <div class="col">
                 <div class="product-item">
                   <figure>
-                    <a href="index.html" title="Product Title">
-                      <img src="images/product-thumb-7.png" alt="Product Thumbnail" class="tab-image">
+                    <a href="../index.html" title="Product Title">
+                      <img src="../images/product-thumb-7.png" alt="Product Thumbnail" class="tab-image">
                     </a>
                   </figure>
                   <div class="d-flex flex-column text-center">
@@ -792,8 +792,8 @@ echo "You must be logged in to view this page"; // change later , only for testi
               <div class="col">
                 <div class="product-item">
                   <figure>
-                    <a href="index.html" title="Product Title">
-                      <img src="images/product-thumb-8.png" alt="Product Thumbnail" class="tab-image">
+                    <a href="../index.html" title="Product Title">
+                      <img src="../images/product-thumb-8.png" alt="Product Thumbnail" class="tab-image">
                     </a>
                   </figure>
                   <div class="d-flex flex-column text-center">
@@ -827,8 +827,8 @@ echo "You must be logged in to view this page"; // change later , only for testi
               <div class="col">
                 <div class="product-item">
                   <figure>
-                    <a href="index.html" title="Product Title">
-                      <img src="images/product-thumb-9.png" alt="Product Thumbnail" class="tab-image">
+                    <a href="../index.html" title="Product Title">
+                      <img src="../images/product-thumb-9.png" alt="Product Thumbnail" class="tab-image">
                     </a>
                   </figure>
                   <div class="d-flex flex-column text-center">
@@ -862,8 +862,8 @@ echo "You must be logged in to view this page"; // change later , only for testi
               <div class="col">
                 <div class="product-item">
                   <figure>
-                    <a href="index.html" title="Product Title">
-                      <img src="images/product-thumb-10.png" alt="Product Thumbnail" class="tab-image">
+                    <a href="../index.html" title="Product Title">
+                      <img src="../images/product-thumb-10.png" alt="Product Thumbnail" class="tab-image">
                     </a>
                   </figure>
                   <div class="d-flex flex-column text-center">
@@ -911,7 +911,7 @@ echo "You must be logged in to view this page"; // change later , only for testi
 
             <div class="banner-blocks">
             
-              <div class="banner-ad d-flex align-items-center large bg-info block-1" style="background: url('images/banner-ad-1.jpg') no-repeat; background-size: cover;">
+              <div class="banner-ad d-flex align-items-center large bg-info block-1" style="background: url('../images/banner-ad-1.jpg') no-repeat; background-size: cover;">
                 <div class="banner-content p-5">
                   <div class="content-wrapper text-light">
                     <h3 class="banner-title text-light">Items on SALE</h3>
@@ -921,7 +921,7 @@ echo "You must be logged in to view this page"; // change later , only for testi
                 </div>
               </div>
               
-              <div class="banner-ad bg-success-subtle block-2" style="background:url('images/banner-ad-2.jpg') no-repeat;background-size: cover">
+              <div class="banner-ad bg-success-subtle block-2" style="background:url('../images/banner-ad-2.jpg') no-repeat;background-size: cover">
                 <div class="banner-content align-items-center p-5">
                   <div class="content-wrapper text-light">
                     <h3 class="banner-title text-light">Combo offers</h3>
@@ -931,7 +931,7 @@ echo "You must be logged in to view this page"; // change later , only for testi
                 </div>
               </div>
 
-              <div class="banner-ad bg-danger block-3" style="background:url('images/banner-ad-3.jpg') no-repeat;background-size: cover">
+              <div class="banner-ad bg-danger block-3" style="background:url('../images/banner-ad-3.jpg') no-repeat;background-size: cover">
                 <div class="banner-content align-items-center p-5">
                   <div class="content-wrapper text-light">
                     <h3 class="banner-title text-light">Discount Coupons</h3>
@@ -977,8 +977,8 @@ echo "You must be logged in to view this page"; // change later , only for testi
                                 
                 <div class="product-item swiper-slide">
                   <figure>
-                    <a href="index.html" title="Product Title">
-                      <img src="images/product-thumb-10.png" alt="Product Thumbnail" class="tab-image">
+                    <a href="../index.html" title="Product Title">
+                      <img src="../images/product-thumb-10.png" alt="Product Thumbnail" class="tab-image">
                     </a>
                   </figure>
                   <div class="d-flex flex-column text-center">
@@ -1010,8 +1010,8 @@ echo "You must be logged in to view this page"; // change later , only for testi
 
                 <div class="product-item swiper-slide">
                   <figure>
-                    <a href="index.html" title="Product Title">
-                      <img src="images/product-thumb-11.png" alt="Product Thumbnail" class="tab-image">
+                    <a href="../index.html" title="Product Title">
+                      <img src="../images/product-thumb-11.png" alt="Product Thumbnail" class="tab-image">
                     </a>
                   </figure>
                   <div class="d-flex flex-column text-center">
@@ -1043,8 +1043,8 @@ echo "You must be logged in to view this page"; // change later , only for testi
 
                 <div class="product-item swiper-slide">
                   <figure>
-                    <a href="index.html" title="Product Title">
-                      <img src="images/product-thumb-12.png" alt="Product Thumbnail" class="tab-image">
+                    <a href="../index.html" title="Product Title">
+                      <img src="../images/product-thumb-12.png" alt="Product Thumbnail" class="tab-image">
                     </a>
                   </figure>
                   <div class="d-flex flex-column text-center">
@@ -1076,8 +1076,8 @@ echo "You must be logged in to view this page"; // change later , only for testi
 
                 <div class="product-item swiper-slide">
                   <figure>
-                    <a href="index.html" title="Product Title">
-                      <img src="images/product-thumb-13.png" alt="Product Thumbnail" class="tab-image">
+                    <a href="../index.html" title="Product Title">
+                      <img src="../images/product-thumb-13.png" alt="Product Thumbnail" class="tab-image">
                     </a>
                   </figure>
                   <div class="d-flex flex-column text-center">
@@ -1109,8 +1109,8 @@ echo "You must be logged in to view this page"; // change later , only for testi
 
                 <div class="product-item swiper-slide">
                   <figure>
-                    <a href="index.html" title="Product Title">
-                      <img src="images/product-thumb-14.png" alt="Product Thumbnail" class="tab-image">
+                    <a href="../index.html" title="Product Title">
+                      <img src="../images/product-thumb-14.png" alt="Product Thumbnail" class="tab-image">
                     </a>
                   </figure>
                   <div class="d-flex flex-column text-center">
@@ -1142,8 +1142,8 @@ echo "You must be logged in to view this page"; // change later , only for testi
 
                 <div class="product-item swiper-slide">
                   <figure>
-                    <a href="index.html" title="Product Title">
-                      <img src="images/product-thumb-15.png" alt="Product Thumbnail" class="tab-image">
+                    <a href="../index.html" title="Product Title">
+                      <img src="../images/product-thumb-15.png" alt="Product Thumbnail" class="tab-image">
                     </a>
                   </figure>
                   <div class="d-flex flex-column text-center">
@@ -1175,8 +1175,8 @@ echo "You must be logged in to view this page"; // change later , only for testi
 
                 <div class="product-item swiper-slide">
                   <figure>
-                    <a href="index.html" title="Product Title">
-                      <img src="images/product-thumb-16.png" alt="Product Thumbnail" class="tab-image">
+                    <a href="../index.html" title="Product Title">
+                      <img src="../images/product-thumb-16.png" alt="Product Thumbnail" class="tab-image">
                     </a>
                   </figure>
                   <div class="d-flex flex-column text-center">
@@ -1208,8 +1208,8 @@ echo "You must be logged in to view this page"; // change later , only for testi
 
                 <div class="product-item swiper-slide">
                   <figure>
-                    <a href="index.html" title="Product Title">
-                      <img src="images/product-thumb-17.png" alt="Product Thumbnail" class="tab-image">
+                    <a href="../index.html" title="Product Title">
+                      <img src="../images/product-thumb-17.png" alt="Product Thumbnail" class="tab-image">
                     </a>
                   </figure>
                   <div class="d-flex flex-column text-center">
@@ -1241,8 +1241,8 @@ echo "You must be logged in to view this page"; // change later , only for testi
 
                 <div class="product-item swiper-slide">
                   <figure>
-                    <a href="index.html" title="Product Title">
-                      <img src="images/product-thumb-18.png" alt="Product Thumbnail" class="tab-image">
+                    <a href="../index.html" title="Product Title">
+                      <img src="../images/product-thumb-18.png" alt="Product Thumbnail" class="tab-image">
                     </a>
                   </figure>
                   <div class="d-flex flex-column text-center">
@@ -1285,7 +1285,7 @@ echo "You must be logged in to view this page"; // change later , only for testi
     <section>
       <div class="container-lg">
 
-        <div class="bg-secondary text-light py-5 my-5" style="background: url('images/banner-newsletter.jpg') no-repeat; background-size: cover;">
+        <div class="bg-secondary text-light py-5 my-5" style="background: url('../images/banner-newsletter.jpg') no-repeat; background-size: cover;">
           <div class="container">
             <div class="row justify-content-center">
               <div class="col-md-5 p-3">
@@ -1348,8 +1348,8 @@ echo "You must be logged in to view this page"; // change later , only for testi
                                 
                 <div class="product-item swiper-slide">
                   <figure>
-                    <a href="index.html" title="Product Title">
-                      <img src="images/product-thumb-15.png" alt="Product Thumbnail" class="tab-image">
+                    <a href="../index.html" title="Product Title">
+                      <img src="../images/product-thumb-15.png" alt="Product Thumbnail" class="tab-image">
                     </a>
                   </figure>
                   <div class="d-flex flex-column text-center">
@@ -1381,8 +1381,8 @@ echo "You must be logged in to view this page"; // change later , only for testi
 
                 <div class="product-item swiper-slide">
                   <figure>
-                    <a href="index.html" title="Product Title">
-                      <img src="images/product-thumb-16.png" alt="Product Thumbnail" class="tab-image">
+                    <a href="../index.html" title="Product Title">
+                      <img src="../images/product-thumb-16.png" alt="Product Thumbnail" class="tab-image">
                     </a>
                   </figure>
                   <div class="d-flex flex-column text-center">
@@ -1414,8 +1414,8 @@ echo "You must be logged in to view this page"; // change later , only for testi
 
                 <div class="product-item swiper-slide">
                   <figure>
-                    <a href="index.html" title="Product Title">
-                      <img src="images/product-thumb-17.png" alt="Product Thumbnail" class="tab-image">
+                    <a href="../index.html" title="Product Title">
+                      <img src="../images/product-thumb-17.png" alt="Product Thumbnail" class="tab-image">
                     </a>
                   </figure>
                   <div class="d-flex flex-column text-center">
@@ -1447,8 +1447,8 @@ echo "You must be logged in to view this page"; // change later , only for testi
 
                 <div class="product-item swiper-slide">
                   <figure>
-                    <a href="index.html" title="Product Title">
-                      <img src="images/product-thumb-18.png" alt="Product Thumbnail" class="tab-image">
+                    <a href="../index.html" title="Product Title">
+                      <img src="../images/product-thumb-18.png" alt="Product Thumbnail" class="tab-image">
                     </a>
                   </figure>
                   <div class="d-flex flex-column text-center">
@@ -1480,8 +1480,8 @@ echo "You must be logged in to view this page"; // change later , only for testi
 
                 <div class="product-item swiper-slide">
                   <figure>
-                    <a href="index.html" title="Product Title">
-                      <img src="images/product-thumb-19.png" alt="Product Thumbnail" class="tab-image">
+                    <a href="../index.html" title="Product Title">
+                      <img src="../images/product-thumb-19.png" alt="Product Thumbnail" class="tab-image">
                     </a>
                   </figure>
                   <div class="d-flex flex-column text-center">
@@ -1513,8 +1513,8 @@ echo "You must be logged in to view this page"; // change later , only for testi
 
                 <div class="product-item swiper-slide">
                   <figure>
-                    <a href="index.html" title="Product Title">
-                      <img src="images/product-thumb-10.png" alt="Product Thumbnail" class="tab-image">
+                    <a href="../index.html" title="Product Title">
+                      <img src="../images/product-thumb-10.png" alt="Product Thumbnail" class="tab-image">
                     </a>
                   </figure>
                   <div class="d-flex flex-column text-center">
@@ -1546,8 +1546,8 @@ echo "You must be logged in to view this page"; // change later , only for testi
 
                 <div class="product-item swiper-slide">
                   <figure>
-                    <a href="index.html" title="Product Title">
-                      <img src="images/product-thumb-11.png" alt="Product Thumbnail" class="tab-image">
+                    <a href="../index.html" title="Product Title">
+                      <img src="../images/product-thumb-11.png" alt="Product Thumbnail" class="tab-image">
                     </a>
                   </figure>
                   <div class="d-flex flex-column text-center">
@@ -1579,8 +1579,8 @@ echo "You must be logged in to view this page"; // change later , only for testi
 
                 <div class="product-item swiper-slide">
                   <figure>
-                    <a href="index.html" title="Product Title">
-                      <img src="images/product-thumb-12.png" alt="Product Thumbnail" class="tab-image">
+                    <a href="../index.html" title="Product Title">
+                      <img src="../images/product-thumb-12.png" alt="Product Thumbnail" class="tab-image">
                     </a>
                   </figure>
                   <div class="d-flex flex-column text-center">
@@ -1612,8 +1612,8 @@ echo "You must be logged in to view this page"; // change later , only for testi
 
                 <div class="product-item swiper-slide">
                   <figure>
-                    <a href="index.html" title="Product Title">
-                      <img src="images/product-thumb-13.png" alt="Product Thumbnail" class="tab-image">
+                    <a href="../index.html" title="Product Title">
+                      <img src="../images/product-thumb-13.png" alt="Product Thumbnail" class="tab-image">
                     </a>
                   </figure>
                   <div class="d-flex flex-column text-center">
@@ -1681,8 +1681,8 @@ echo "You must be logged in to view this page"; // change later , only for testi
                 
                 <div class="product-item swiper-slide">
                   <figure>
-                    <a href="index.html" title="Product Title">
-                      <img src="images/product-thumb-20.png" alt="Product Thumbnail" class="tab-image">
+                    <a href="../index.html" title="Product Title">
+                      <img src="../images/product-thumb-20.png" alt="Product Thumbnail" class="tab-image">
                     </a>
                   </figure>
                   <div class="d-flex flex-column text-center">
@@ -1714,8 +1714,8 @@ echo "You must be logged in to view this page"; // change later , only for testi
 
                 <div class="product-item swiper-slide">
                   <figure>
-                    <a href="index.html" title="Product Title">
-                      <img src="images/product-thumb-1.png" alt="Product Thumbnail" class="tab-image">
+                    <a href="../index.html" title="Product Title">
+                      <img src="../images/product-thumb-1.png" alt="Product Thumbnail" class="tab-image">
                     </a>
                   </figure>
                   <div class="d-flex flex-column text-center">
@@ -1747,8 +1747,8 @@ echo "You must be logged in to view this page"; // change later , only for testi
 
                 <div class="product-item swiper-slide">
                   <figure>
-                    <a href="index.html" title="Product Title">
-                      <img src="images/product-thumb-21.png" alt="Product Thumbnail" class="tab-image">
+                    <a href="../index.html" title="Product Title">
+                      <img src="../images/product-thumb-21.png" alt="Product Thumbnail" class="tab-image">
                     </a>
                   </figure>
                   <div class="d-flex flex-column text-center">
@@ -1780,8 +1780,8 @@ echo "You must be logged in to view this page"; // change later , only for testi
 
                 <div class="product-item swiper-slide">
                   <figure>
-                    <a href="index.html" title="Product Title">
-                      <img src="images/product-thumb-22.png" alt="Product Thumbnail" class="tab-image">
+                    <a href="../index.html" title="Product Title">
+                      <img src="../images/product-thumb-22.png" alt="Product Thumbnail" class="tab-image">
                     </a>
                   </figure>
                   <div class="d-flex flex-column text-center">
@@ -1813,8 +1813,8 @@ echo "You must be logged in to view this page"; // change later , only for testi
 
                 <div class="product-item swiper-slide">
                   <figure>
-                    <a href="index.html" title="Product Title">
-                      <img src="images/product-thumb-23.png" alt="Product Thumbnail" class="tab-image">
+                    <a href="../index.html" title="Product Title">
+                      <img src="../images/product-thumb-23.png" alt="Product Thumbnail" class="tab-image">
                     </a>
                   </figure>
                   <div class="d-flex flex-column text-center">
@@ -1846,8 +1846,8 @@ echo "You must be logged in to view this page"; // change later , only for testi
 
                 <div class="product-item swiper-slide">
                   <figure>
-                    <a href="index.html" title="Product Title">
-                      <img src="images/product-thumb-10.png" alt="Product Thumbnail" class="tab-image">
+                    <a href="../index.html" title="Product Title">
+                      <img src="../images/product-thumb-10.png" alt="Product Thumbnail" class="tab-image">
                     </a>
                   </figure>
                   <div class="d-flex flex-column text-center">
@@ -1879,8 +1879,8 @@ echo "You must be logged in to view this page"; // change later , only for testi
 
                 <div class="product-item swiper-slide">
                   <figure>
-                    <a href="index.html" title="Product Title">
-                      <img src="images/product-thumb-11.png" alt="Product Thumbnail" class="tab-image">
+                    <a href="../index.html" title="Product Title">
+                      <img src="../images/product-thumb-11.png" alt="Product Thumbnail" class="tab-image">
                     </a>
                   </figure>
                   <div class="d-flex flex-column text-center">
@@ -1912,8 +1912,8 @@ echo "You must be logged in to view this page"; // change later , only for testi
 
                 <div class="product-item swiper-slide">
                   <figure>
-                    <a href="index.html" title="Product Title">
-                      <img src="images/product-thumb-12.png" alt="Product Thumbnail" class="tab-image">
+                    <a href="../index.html" title="Product Title">
+                      <img src="../images/product-thumb-12.png" alt="Product Thumbnail" class="tab-image">
                     </a>
                   </figure>
                   <div class="d-flex flex-column text-center">
@@ -1945,8 +1945,8 @@ echo "You must be logged in to view this page"; // change later , only for testi
 
                 <div class="product-item swiper-slide">
                   <figure>
-                    <a href="index.html" title="Product Title">
-                      <img src="images/product-thumb-13.png" alt="Product Thumbnail" class="tab-image">
+                    <a href="../index.html" title="Product Title">
+                      <img src="../images/product-thumb-13.png" alt="Product Thumbnail" class="tab-image">
                     </a>
                   </figure>
                   <div class="d-flex flex-column text-center">
@@ -1998,7 +1998,7 @@ echo "You must be logged in to view this page"; // change later , only for testi
             <article class="post-item card border-0 shadow-sm p-3">
               <div class="image-holder zoom-effect">
                 <a href="#">
-                  <img src="images/post-thumbnail-1.jpg" alt="post" class="card-img-top">
+                  <img src="../images/post-thumbnail-1.jpg" alt="post" class="card-img-top">
                 </a>
               </div>
               <div class="card-body">
@@ -2019,7 +2019,7 @@ echo "You must be logged in to view this page"; // change later , only for testi
             <article class="post-item card border-0 shadow-sm p-3">
               <div class="image-holder zoom-effect">
                 <a href="#">
-                  <img src="images/post-thumbnail-2.jpg" alt="post" class="card-img-top">
+                  <img src="../images/post-thumbnail-2.jpg" alt="post" class="card-img-top">
                 </a>
               </div>
               <div class="card-body">
@@ -2040,7 +2040,7 @@ echo "You must be logged in to view this page"; // change later , only for testi
             <article class="post-item card border-0 shadow-sm p-3">
               <div class="image-holder zoom-effect">
                 <a href="#">
-                  <img src="images/post-thumbnail-3.jpg" alt="post" class="card-img-top">
+                  <img src="../images/post-thumbnail-3.jpg" alt="post" class="card-img-top">
                 </a>
               </div>
               <div class="card-body">
@@ -2071,12 +2071,12 @@ echo "You must be logged in to view this page"; // change later , only for testi
                 <h2 class="mt-5">Download Organic App</h2>
                 <p>Online Orders made easy, fast and reliable</p>
                 <div class="d-flex gap-2 flex-wrap mb-5">
-                  <a href="#" title="App store"><img src="images/img-app-store.png" alt="app-store"></a>
-                  <a href="#" title="Google Play"><img src="images/img-google-play.png" alt="google-play"></a>
+                  <a href="#" title="App store"><img src="../images/img-app-store.png" alt="app-store"></a>
+                  <a href="#" title="Google Play"><img src="../images/img-google-play.png" alt="google-play"></a>
                 </div>
               </div>
               <div class="col-md-5">
-                <img src="images/banner-onlineapp.png" alt="phone" class="img-fluid">
+                <img src="../images/banner-onlineapp.png" alt="phone" class="img-fluid">
               </div>
             </div>
           </div>
@@ -2177,7 +2177,7 @@ echo "You must be logged in to view this page"; // change later , only for testi
 
           <div class="col-lg-3 col-md-6 col-sm-6">
             <div class="footer-menu">
-              <img src="images/logo.svg" width="240" height="70" alt="logo">
+              <img src="../images/logo.svg" width="240" height="70" alt="logo">
               <div class="social-links mt-3">
                 <ul class="d-flex list-unstyled gap-2">
                   <li>
@@ -2289,7 +2289,7 @@ echo "You must be logged in to view this page"; // change later , only for testi
             <div class="footer-menu">
               <h5 class="widget-title">Subscribe Us</h5>
               <p>Subscribe to our newsletter to get updates about our grand offers.</p>
-              <form class="d-flex mt-3 gap-0" action="index.html">
+              <form class="d-flex mt-3 gap-0" action="../index.html">
                 <input class="form-control rounded-start rounded-0 bg-light" type="email" placeholder="Email Address" aria-label="Email Address">
                 <button class="btn btn-dark rounded-end rounded-0" type="submit">Subscribe</button>
               </form>
@@ -2311,10 +2311,10 @@ echo "You must be logged in to view this page"; // change later , only for testi
         </div>
       </div>
     </div>
-    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="../js/jquery-1.11.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/script.js"></script>
+    <script src="../js/plugins.js"></script>
+    <script src="../js/script.js"></script>
   </body>
 </html>

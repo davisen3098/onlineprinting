@@ -1,7 +1,7 @@
 <?php
 
-require_once 'classes/DBConnection.php';
-require_once 'classes/User.php'; 
+require_once '../classes/DBConnection.php';
+require_once '../classes/User.php';
 
 function validateFormFields($fields) {
     $errors = [];
@@ -66,8 +66,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/vendor.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="../css/vendor.css">
+    <link rel="stylesheet" type="text/css" href="../style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -358,7 +358,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <ul class="navbar-nav justify-content-end menu-list list-unstyled d-flex gap-md-3 mb-0">
                 <li class="nav-item border-dashed active">
-                    <a href="index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
+                    <a href="../index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
                         <svg width="24" height="24" viewBox="0 0 24 24">
                             <use xlink:href="#fruits"></use>
                         </svg>
@@ -366,7 +366,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </a>
                 </li>
                 <li class="nav-item border-dashed">
-                    <a href="index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
+                    <a href="../index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
                         <svg width="24" height="24" viewBox="0 0 24 24">
                             <use xlink:href="#dairy"></use>
                         </svg>
@@ -374,7 +374,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </a>
                 </li>
                 <li class="nav-item border-dashed">
-                    <a href="index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
+                    <a href="../index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
                         <svg width="24" height="24" viewBox="0 0 24 24">
                             <use xlink:href="#meat"></use>
                         </svg>
@@ -382,7 +382,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </a>
                 </li>
                 <li class="nav-item border-dashed">
-                    <a href="index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
+                    <a href="../index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
                         <svg width="24" height="24" viewBox="0 0 24 24">
                             <use xlink:href="#seafood"></use>
                         </svg>
@@ -390,7 +390,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </a>
                 </li>
                 <li class="nav-item border-dashed">
-                    <a href="index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
+                    <a href="../index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
                         <svg width="24" height="24" viewBox="0 0 24 24">
                             <use xlink:href="#bakery"></use>
                         </svg>
@@ -398,7 +398,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </a>
                 </li>
                 <li class="nav-item border-dashed">
-                    <a href="index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
+                    <a href="../index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
                         <svg width="24" height="24" viewBox="0 0 24 24">
                             <use xlink:href="#canned"></use>
                         </svg>
@@ -406,7 +406,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </a>
                 </li>
                 <li class="nav-item border-dashed">
-                    <a href="index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
+                    <a href="../index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
                         <svg width="24" height="24" viewBox="0 0 24 24">
                             <use xlink:href="#frozen"></use>
                         </svg>
@@ -414,7 +414,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </a>
                 </li>
                 <li class="nav-item border-dashed">
-                    <a href="index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
+                    <a href="../index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
                         <svg width="24" height="24" viewBox="0 0 24 24">
                             <use xlink:href="#pasta"></use>
                         </svg>
@@ -422,7 +422,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </a>
                 </li>
                 <li class="nav-item border-dashed">
-                    <a href="index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
+                    <a href="../index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
                         <svg width="24" height="24" viewBox="0 0 24 24">
                             <use xlink:href="#breakfast"></use>
                         </svg>
@@ -430,7 +430,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </a>
                 </li>
                 <li class="nav-item border-dashed">
-                    <a href="index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
+                    <a href="../index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
                         <svg width="24" height="24" viewBox="0 0 24 24">
                             <use xlink:href="#snacks"></use>
                         </svg>
@@ -448,15 +448,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </button>
                     <div class="collapse" id="beverages-collapse">
                         <ul class="btn-toggle-nav list-unstyled fw-normal ps-5 pb-1">
-                            <li class="border-bottom py-2"><a href="index.html" class="dropdown-item">Water</a></li>
-                            <li class="border-bottom py-2"><a href="index.html" class="dropdown-item">Juice</a></li>
-                            <li class="border-bottom py-2"><a href="index.html" class="dropdown-item">Soda</a></li>
-                            <li class="border-bottom py-2"><a href="index.html" class="dropdown-item">Tea</a></li>
+                            <li class="border-bottom py-2"><a href="../index.html" class="dropdown-item">Water</a></li>
+                            <li class="border-bottom py-2"><a href="../index.html" class="dropdown-item">Juice</a></li>
+                            <li class="border-bottom py-2"><a href="../index.html" class="dropdown-item">Soda</a></li>
+                            <li class="border-bottom py-2"><a href="../index.html" class="dropdown-item">Tea</a></li>
                         </ul>
                     </div>
                 </li>
                 <li class="nav-item border-dashed">
-                    <a href="index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
+                    <a href="../index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
                         <svg width="24" height="24" viewBox="0 0 24 24">
                             <use xlink:href="#spices"></use>
                         </svg>
@@ -464,7 +464,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </a>
                 </li>
                 <li class="nav-item border-dashed">
-                    <a href="index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
+                    <a href="../index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
                         <svg width="24" height="24" viewBox="0 0 24 24">
                             <use xlink:href="#baby"></use>
                         </svg>
@@ -472,7 +472,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </a>
                 </li>
                 <li class="nav-item border-dashed">
-                    <a href="index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
+                    <a href="../index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
                         <svg width="24" height="24" viewBox="0 0 24 24">
                             <use xlink:href="#health"></use>
                         </svg>
@@ -480,7 +480,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </a>
                 </li>
                 <li class="nav-item border-dashed">
-                    <a href="index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
+                    <a href="../index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
                         <svg width="24" height="24" viewBox="0 0 24 24">
                             <use xlink:href="#household"></use>
                         </svg>
@@ -488,7 +488,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </a>
                 </li>
                 <li class="nav-item border-dashed">
-                    <a href="index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
+                    <a href="../index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
                         <svg width="24" height="24" viewBox="0 0 24 24">
                             <use xlink:href="#personal"></use>
                         </svg>
@@ -496,7 +496,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </a>
                 </li>
                 <li class="nav-item border-dashed">
-                    <a href="index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
+                    <a href="../index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
                         <svg width="24" height="24" viewBox="0 0 24 24">
                             <use xlink:href="#pet"></use>
                         </svg>
@@ -549,23 +549,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div>
                     <ul class="navbar-nav list-unstyled d-flex flex-row gap-3 gap-lg-5 flex-wrap align-items-center mb-0 fw-bold text-uppercase text-dark">
                         <li class="nav-item active">
-                            <a href="index.html" class="nav-link">Home</a>
+                            <a href="../index.html" class="nav-link">Home</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle pe-3" role="button" id="pages" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
                             <ul class="dropdown-menu border-0 p-3 rounded-0 shadow" aria-labelledby="pages">
-                                <li><a href="index.html" class="dropdown-item">About Us </a></li>
-                                <li><a href="index.html" class="dropdown-item">Shop </a></li>
-                                <li><a href="index.html" class="dropdown-item">Single Product </a></li>
-                                <li><a href="index.html" class="dropdown-item">Cart </a></li>
-                                <li><a href="index.html" class="dropdown-item">Checkout </a></li>
-                                <li><a href="index.html" class="dropdown-item">Blog </a></li>
-                                <li><a href="index.html" class="dropdown-item">Single Post </a></li>
-                                <li><a href="index.html" class="dropdown-item">Styles </a></li>
-                                <li><a href="index.html" class="dropdown-item">Contact </a></li>
-                                <li><a href="index.html" class="dropdown-item">Thank You </a></li>
-                                <li><a href="index.html" class="dropdown-item">My Account </a></li>
-                                <li><a href="index.html" class="dropdown-item">404 Error </a></li>
+                                <li><a href="../index.html" class="dropdown-item">About Us </a></li>
+                                <li><a href="../index.html" class="dropdown-item">Shop </a></li>
+                                <li><a href="../index.html" class="dropdown-item">Single Product </a></li>
+                                <li><a href="../index.html" class="dropdown-item">Cart </a></li>
+                                <li><a href="../index.html" class="dropdown-item">Checkout </a></li>
+                                <li><a href="../index.html" class="dropdown-item">Blog </a></li>
+                                <li><a href="../index.html" class="dropdown-item">Single Post </a></li>
+                                <li><a href="../index.html" class="dropdown-item">Styles </a></li>
+                                <li><a href="../index.html" class="dropdown-item">Contact </a></li>
+                                <li><a href="../index.html" class="dropdown-item">Thank You </a></li>
+                                <li><a href="../index.html" class="dropdown-item">My Account </a></li>
+                                <li><a href="../index.html" class="dropdown-item">404 Error </a></li>
                             </ul>
                         </li>
                     </ul>
@@ -598,7 +598,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <section>
         <div class="container-lg">
 
-            <div class="bg-secondary text-light py-5 my-5" style="background: url('images/banner-newsletter.jpg') no-repeat; background-size: cover;">
+            <div class="bg-secondary text-light py-5 my-5" style="background: url('../images/banner-newsletter.jpg') no-repeat; background-size: cover;">
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="d-flex justify-content-center">
@@ -664,7 +664,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="footer-menu">
-                        <img src="images/logo.svg" width="240" height="70" alt="logo">
+                        <img src="../images/logo.svg" width="240" height="70" alt="logo">
                         <div class="social-links mt-3">
                             <ul class="d-flex list-unstyled gap-2">
                                 <li>
@@ -786,7 +786,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div class="footer-menu">
                         <h5 class="widget-title">Subscribe Us</h5>
                         <p>Subscribe to our newsletter to get updates about our grand offers.</p>
-                        <form class="d-flex mt-3 gap-0" action="index.html">
+                        <form class="d-flex mt-3 gap-0" action="../index.html">
                             <input class="form-control rounded-start rounded-0 bg-light" type="email" placeholder="Email Address" aria-label="Email Address">
                             <button class="btn btn-dark rounded-end rounded-0" type="submit">Subscribe</button>
                         </form>
@@ -808,11 +808,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
         </div>
     </div>
-    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="../js/jquery-1.11.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/script.js"></script>
+    <script src="../js/plugins.js"></script>
+    <script src="../js/script.js"></script>
 </body>
 
 </html>
