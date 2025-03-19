@@ -25,7 +25,9 @@ class DBConnection{
         
     }
     public function __destruct(){
-        $this->conn->close();
+        if($this->conn && $this->conn instanceof mysqli && !$this->conn->connect_error) {
+            $this->conn->close();
+        }
     }
 }
 ?>
