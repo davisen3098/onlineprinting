@@ -1,17 +1,26 @@
 <?php
 
 include_once('../config.php');
-if (!isset($_SESSION['admin_id'])) {
-    header('location:adminLogin.php');
-}
 
 $conn = new DBConnection();
-$no_user = $conn->getUserCount();
-$no_order = $conn->getOrderCount();
-// $no_stock = $conn->getStockCount();
-$no_supplier = $conn->getSupplierCount();
+$query_run = $conn->getProduct();
+
+if (isset($_POST['delete_color'])) {
+    $sql = "delete from color where color_id = :color_id";
+    $stmt = $db->prepare($sql);
+    $params = [
+        'color_id' => $_POST['delete_color'],
+    ];
+    $stmt->execute($params);
+    if ($stmt->rowCount() > 0) {
+        echo "<script>alert('Colord deleted successfully')</script>";
+    } else {
+        echo "<script>alert('Something went wrong')</script>";
+    }
+}
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,9 +30,8 @@ $no_supplier = $conn->getSupplierCount();
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Dashboard Admin</title>
-    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
-    <link href="style.css" rel="stylesheet" />
+    <title>Add new category </title>
+    <link href="../fyp/style.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
 </head>
 
@@ -45,13 +53,13 @@ $no_supplier = $conn->getSupplierCount();
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="admin_logout.php">Logout</a></li>
+                    <li><a class="dropdown-item" href="#!">Logout</a></li>
                 </ul>
             </li>
         </ul>
     </nav>
     <div id="layoutSidenav">
-        <div id="layoutSidenav_nav">
+    <div id="layoutSidenav_nav">
             <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                 <div class="sb-sidenav-menu">
                     <div class="nav">
@@ -68,7 +76,7 @@ $no_supplier = $conn->getSupplierCount();
                         </a>
                         <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="product_type/product_type.php">Add new product type</a>
+                                <a class="nav-link" href="../product_type/product_type.php">Add new product type</a>
                                 <a class="nav-link" href="layout-sidenav-light.html">View product type</a>
                             </nav>
                         </div>
@@ -82,8 +90,8 @@ $no_supplier = $conn->getSupplierCount();
                         </a>
                         <div class="collapse" id="collapseCategory" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="category/category.php">Add new category</a>
-                                <a class="nav-link" href="category/category-view.php">View category</a>
+                                <a class="nav-link" href="../category/category.php">Add new category</a>
+                                <a class="nav-link" href="../category/category-view.php">View category</a>
                             </nav>
                         </div>
                         <!--End of Sidebar Collapase Category -->
@@ -96,8 +104,8 @@ $no_supplier = $conn->getSupplierCount();
                         </a>
                         <div class="collapse" id="collapseColor" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="color/color.php">Add new color</a>
-                                <a class="nav-link" href="color/color-view.php">View color</a>
+                                <a class="nav-link" href="../color/color.php">Add new color</a>
+                                <a class="nav-link" href="../color/color-view.php">View color</a>
                             </nav>
                         </div>
                         <!--End of Sidebar Collapase Color -->
@@ -110,8 +118,8 @@ $no_supplier = $conn->getSupplierCount();
                         </a>
                         <div class="collapse" id="collapseProduct" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="product/product.php">Add new product</a>
-                                <a class="nav-link" href="product/product-view.php">View product</a>
+                                <a class="nav-link" href="../product/product.php">Add new product</a>
+                                <a class="nav-link" href="../product/product-view.php">View product</a>
                             </nav>
                         </div>
                         <!--End of Sidebar Collapase Color -->
@@ -125,8 +133,8 @@ $no_supplier = $conn->getSupplierCount();
                         </a>
                         <div class="collapse" id="collapseStock" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="stock/stock.php">Add new stock</a>
-                                <a class="nav-link" href="stock/stock-view.php">View stock</a>
+                                <a class="nav-link" href="../stock/stock.php">Add new stock</a>
+                                <a class="nav-link" href="../stock/stock-view.php">View stock</a>
                             </nav>
                         </div>
                         <!--End of Sidebar Collapase Color -->
@@ -139,11 +147,12 @@ $no_supplier = $conn->getSupplierCount();
                         </a>
                         <div class="collapse" id="collapseUnit" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="unit/unit.php">Add new unit</a>
-                                <a class="nav-link" href="unit/unit-view.php">View unit</a>
+                                <a class="nav-link" href="../unit/unit.php">Add new unit</a>
+                                <a class="nav-link" href="../unit/unit-view.php">View unit</a>
                             </nav>
                         </div>
                         <!--End of Sidebar Collapase Color -->
+                        
                         <!-- Sidebar Collapase Color -->
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseCustomer" aria-expanded="false" aria-controls="collapseLayouts">
                             <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
@@ -180,58 +189,58 @@ $no_supplier = $conn->getSupplierCount();
         </div>
         <div id="layoutSidenav_content">
             <main>
+                <div class="container mt-4">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="text-center">Product
+                                    </h4>
+                                </div>
+                                <div class="card-body">
 
-                <div class="container-fluid" id="main">
-                    <div class="row row-offcanvas row-offcanvas-left">
+                                    <table class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Name</th>
+                                                <th>Description</th>
+                                                <th>Product Type Id</th>
+                                                <th>Categoty Id</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
+                                            if (mysqli_num_rows($query_run) > 0) {
+                                                foreach ($query_run as $prod) {
+                                            ?>
+                                                    <tr>
+                                                        <td><?= $prod['p_id']; ?></td>
+                                                        <td><?= $prod['p_name']; ?></td>
+                                                        <td><?= $prod['p_desc']; ?></td>
+                                                        <td><?= $prod['pt_id']; ?></td>
+                                                        <td><?= $prod['cat_id']; ?></td>
+                                                        <td>
+                                                            <a href="product-edit.php?id=<?= $prod['p_id']; ?>" class="btn btn-success btn-sm">Edit</a>
+                                                            <!-- <form action="" method="post" class="d-inline">
+                                                                <button type="submit" name="delete_color" value="<?= $prod['p_id']; ?>" class="btn btn-danger btn-sm">Delete</button>
+                                                            </form> -->
+                                                        </td>
+                                                    </tr>
+                                            <?php
+                                                }
+                                            } else {
+                                                echo "<h5> No Record Found </h5>";
+                                            }
+                                            ?>
+                                        </tbody>
+                                    </table>
 
-                        <div class="row mb-3">
-                            <div class="col-xl-4 col-sm-6 py-2">
-                                <div class="card bg-success text-white h-25">
-                                    <div class="card-body bg-success">
-                                        <div class="rotate">
-                                            <i class="fa fa-users fa-2x"></i>
-                                        </div>
-                                        <h6 class="text-uppercase">Customers</h6>
-                                        <h1 class="display-4"><?= $no_user ?></h1>
-                                    </div>
                                 </div>
                             </div>
-                            <div class="col-xl-4 col-sm-6 py-2">
-                                <div class="card text-white bg-danger h-100">
-                                    <div class="card-body bg-danger">
-                                        <div class="rotate">
-                                            <i class="fa fa-list fa-2x"></i>
-                                        </div>
-                                        <h6 class="text-uppercase">Supplier</h6>
-                                        <h1 class="display-4"><?= $no_supplier ?></h1>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-sm-6 py-2">
-                                <div class="card text-white bg-info h-100">
-                                    <div class="card-body bg-info">
-                                        <div class="rotate">
-                                            <i class="fa fa-credit-card fa-2x"></i>
-                                        </div>
-                                        <h6 class="text-uppercase">Orders</h6>
-                                        <h1 class="display-4"><?= $no_order ?></h1>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- <div class="col-xl-3 col-sm-6 py-2">
-                                <div class="card text-white bg-warning h-100">
-                                    <div class="card-body">
-                                        <div class="rotate">
-                                            <i class="fa fa-bar-chart fa-2x"></i>
-                                        </div>
-                                        <h6 class="text-uppercase">Stock Available</h6>
-                                        <h1 class="display-4"><?= $no_stock ?></h1>
-                                    </div>
-                                </div>
-                            </div> -->
                         </div>
- 
-                        <!--/row-->
+                    </div>
+                </div>
             </main>
             <footer class="py-4 bg-light mt-auto">
                 <div class="container-fluid px-4">
@@ -248,7 +257,7 @@ $no_supplier = $conn->getSupplierCount();
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-    <script src="scripts.js"></script>
+    <script src="../scripts.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
     <script src="assets/demo/chart-area-demo.js"></script>
     <script src="assets/demo/chart-bar-demo.js"></script>

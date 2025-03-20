@@ -1,17 +1,30 @@
 <?php
 
 include_once('../config.php');
-if (!isset($_SESSION['admin_id'])) {
-    header('location:adminLogin.php');
+
+/**
+ * todo: real-time validation of category name
+ * todo: change alert messages
+ */
+
+if (isset($_POST['submit'])) {
+    $conn = new DBConnection();
+    $p_name = $_POST['p_name'];
+    $p_desc = $_POST['p_desc'];
+    $pt_id = $_POST['pt_dropdown'];
+    $cat_id = $_POST['category'];
+
+    $result = $conn->addProduct($p_name, $p_desc, $pt_id, $cat_id);
+
+    if ($result) {
+        echo "<script>alert('Product successfully added')</script>";
+    } else {
+        echo "<script>alert('Product name already exists')</script>";
+    }
 }
 
-$conn = new DBConnection();
-$no_user = $conn->getUserCount();
-$no_order = $conn->getOrderCount();
-// $no_stock = $conn->getStockCount();
-$no_supplier = $conn->getSupplierCount();
-
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,9 +34,9 @@ $no_supplier = $conn->getSupplierCount();
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Dashboard Admin</title>
+    <title>Add new category </title>
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
-    <link href="style.css" rel="stylesheet" />
+    <link href="../fyp/style.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
 </head>
 
@@ -45,13 +58,13 @@ $no_supplier = $conn->getSupplierCount();
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="admin_logout.php">Logout</a></li>
+                    <li><a class="dropdown-item" href="#!">Logout</a></li>
                 </ul>
             </li>
         </ul>
     </nav>
     <div id="layoutSidenav">
-        <div id="layoutSidenav_nav">
+    <div id="layoutSidenav_nav">
             <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                 <div class="sb-sidenav-menu">
                     <div class="nav">
@@ -68,7 +81,7 @@ $no_supplier = $conn->getSupplierCount();
                         </a>
                         <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="product_type/product_type.php">Add new product type</a>
+                                <a class="nav-link" href="../product_type/product_type.php">Add new product type</a>
                                 <a class="nav-link" href="layout-sidenav-light.html">View product type</a>
                             </nav>
                         </div>
@@ -82,8 +95,8 @@ $no_supplier = $conn->getSupplierCount();
                         </a>
                         <div class="collapse" id="collapseCategory" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="category/category.php">Add new category</a>
-                                <a class="nav-link" href="category/category-view.php">View category</a>
+                                <a class="nav-link" href="../category/category.php">Add new category</a>
+                                <a class="nav-link" href="../category/category-view.php">View category</a>
                             </nav>
                         </div>
                         <!--End of Sidebar Collapase Category -->
@@ -96,8 +109,8 @@ $no_supplier = $conn->getSupplierCount();
                         </a>
                         <div class="collapse" id="collapseColor" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="color/color.php">Add new color</a>
-                                <a class="nav-link" href="color/color-view.php">View color</a>
+                                <a class="nav-link" href="../color/color.php">Add new color</a>
+                                <a class="nav-link" href="../color/color-view.php">View color</a>
                             </nav>
                         </div>
                         <!--End of Sidebar Collapase Color -->
@@ -110,8 +123,8 @@ $no_supplier = $conn->getSupplierCount();
                         </a>
                         <div class="collapse" id="collapseProduct" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="product/product.php">Add new product</a>
-                                <a class="nav-link" href="product/product-view.php">View product</a>
+                                <a class="nav-link" href="../product/product.php">Add new product</a>
+                                <a class="nav-link" href="../product/product-view.php">View product</a>
                             </nav>
                         </div>
                         <!--End of Sidebar Collapase Color -->
@@ -125,8 +138,8 @@ $no_supplier = $conn->getSupplierCount();
                         </a>
                         <div class="collapse" id="collapseStock" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="stock/stock.php">Add new stock</a>
-                                <a class="nav-link" href="stock/stock-view.php">View stock</a>
+                                <a class="nav-link" href="../stock/stock.php">Add new stock</a>
+                                <a class="nav-link" href="../stock/stock-view.php">View stock</a>
                             </nav>
                         </div>
                         <!--End of Sidebar Collapase Color -->
@@ -139,11 +152,12 @@ $no_supplier = $conn->getSupplierCount();
                         </a>
                         <div class="collapse" id="collapseUnit" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="unit/unit.php">Add new unit</a>
-                                <a class="nav-link" href="unit/unit-view.php">View unit</a>
+                                <a class="nav-link" href="../unit/unit.php">Add new unit</a>
+                                <a class="nav-link" href="../unit/unit-view.php">View unit</a>
                             </nav>
                         </div>
                         <!--End of Sidebar Collapase Color -->
+                        
                         <!-- Sidebar Collapase Color -->
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseCustomer" aria-expanded="false" aria-controls="collapseLayouts">
                             <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
@@ -180,58 +194,31 @@ $no_supplier = $conn->getSupplierCount();
         </div>
         <div id="layoutSidenav_content">
             <main>
-
-                <div class="container-fluid" id="main">
-                    <div class="row row-offcanvas row-offcanvas-left">
-
-                        <div class="row mb-3">
-                            <div class="col-xl-4 col-sm-6 py-2">
-                                <div class="card bg-success text-white h-25">
-                                    <div class="card-body bg-success">
-                                        <div class="rotate">
-                                            <i class="fa fa-users fa-2x"></i>
-                                        </div>
-                                        <h6 class="text-uppercase">Customers</h6>
-                                        <h1 class="display-4"><?= $no_user ?></h1>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-sm-6 py-2">
-                                <div class="card text-white bg-danger h-100">
-                                    <div class="card-body bg-danger">
-                                        <div class="rotate">
-                                            <i class="fa fa-list fa-2x"></i>
-                                        </div>
-                                        <h6 class="text-uppercase">Supplier</h6>
-                                        <h1 class="display-4"><?= $no_supplier ?></h1>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-sm-6 py-2">
-                                <div class="card text-white bg-info h-100">
-                                    <div class="card-body bg-info">
-                                        <div class="rotate">
-                                            <i class="fa fa-credit-card fa-2x"></i>
-                                        </div>
-                                        <h6 class="text-uppercase">Orders</h6>
-                                        <h1 class="display-4"><?= $no_order ?></h1>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- <div class="col-xl-3 col-sm-6 py-2">
-                                <div class="card text-white bg-warning h-100">
-                                    <div class="card-body">
-                                        <div class="rotate">
-                                            <i class="fa fa-bar-chart fa-2x"></i>
-                                        </div>
-                                        <h6 class="text-uppercase">Stock Available</h6>
-                                        <h1 class="display-4"><?= $no_stock ?></h1>
-                                    </div>
-                                </div>
-                            </div> -->
+                <div class="container-fluid px-4">
+                    <div class="row justify-content-md-center">
+                        <div class="col-md-8">
+                            <h1 class="mt-4">Add new product </h1>
                         </div>
- 
-                        <!--/row-->
+                    </div>
+                    <div class="row justify-content-md-center">
+                        <div class="col-md-8">
+                            <form action="" method="post">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="p_name" name="p_name" placeholder="Product name">
+                                </div>
+                                <div class="form-group mt-3">
+                                    <textarea placeholder="Description" id="p_desc" name="p_desc" class="form-control"></textarea>
+                                </div>
+                                <select name="category" id="category" class="form-control mt-3">
+                                    <option value="0"> Select Category </option>
+                                </select>
+                                <div class="form-group mt-3">
+                                    <input type="submit" class="btn btn-success form-control" value="Add product" name="submit" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </main>
             <footer class="py-4 bg-light mt-auto">
                 <div class="container-fluid px-4">
@@ -248,12 +235,42 @@ $no_supplier = $conn->getSupplierCount();
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-    <script src="scripts.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../scripts.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-    <script src="assets/demo/chart-area-demo.js"></script>
-    <script src="assets/demo/chart-bar-demo.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
-    <script src="js/datatables-simple-demo.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            $("#pt_dropdown").change(function() {
+                var pt_id = $(this).val();
+                console.log(pt_id);
+                $.ajax({
+                    url: '../getCategory.php',
+                    type: 'post',
+                    data: {
+                        depart: pt_id
+                    },
+                    dataType: 'json',
+                    success: function(response) {
+                        console.log(response);
+
+                        var len = response.length;
+
+                        $("#category").empty();
+                        for (var i = 0; i < len; i++) {
+                            var id = response[i]['cat_id'];
+                            var name = response[i]['cat_name'];
+
+                            $("#category").append("<option value='" + id + "'>" + name + "</option>");
+
+                        }
+                    }
+                });
+            });
+
+        });
+    </script>
 </body>
 
 </html>
