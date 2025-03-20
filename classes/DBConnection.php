@@ -1,7 +1,7 @@
 <?php
-if(!defined('DB_SERVER')){
-    require_once("../initialize.php");
-}
+require_once '../../vendor/autoload.php';
+require_once("../../initialize.php");
+
 class DBConnection{
 
     private $host = DB_SERVER;
@@ -12,7 +12,7 @@ class DBConnection{
     public $conn;
     
     public function __construct(){
-
+        
         if (!isset($this->conn)) {
             
             $this->conn = new mysqli($this->host, $this->username, $this->password, $this->database);
