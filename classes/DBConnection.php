@@ -664,5 +664,63 @@ class DBConnection{
         return $count;
     }
 
+    public function getOrderOfSupplierCount() {
+        $supplierID = $_SESSION['supplier_id']; // Get the logged-in supplier's ID
+
+        // Query to count orders only for the logged-in supplier
+        $stmt = $this->conn->prepare("SELECT COUNT(DISTINCT OrderID) AS no_order FROM `order` WHERE SupplierID = ?");
+        $stmt->bind_param("i", $supplierID);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        
+        if (!$result) {
+            die("Query failed: " . $this->conn->error); // Debugging statement
+        }
+    
+        $arr = $result->fetch_assoc();
+        $count = $arr['no_order'] ?? 0; // Ensure it returns 0 if no orders found
+    
+        return $count;
+    }
+
+    public function getOrderfromCustomer() {
+        $supplierID = $_SESSION['supplier_id']; // Get the logged-in supplier's ID
+
+        // Query to count orders only for the logged-in supplier
+        $stmt = $this->conn->prepare("SELECT * FROM `order` WHERE SupplierID = ?");
+        $stmt->bind_param("i", $supplierID);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        
+        if (!$result) {
+            die("Query failed: " . $this->conn->error); // Debugging statement
+        }
+
+        return $result;
+    }
+
+    public function getCustomerName($customerID) {
+        // Ensure CustomerID is valid
+        if (empty($customerID) || !is_numeric($customerID)) {
+            return "Invalid Customer ID";
+        }
+    
+        // Prepare SQL statement to fetch customer name
+        $stmt = $this->conn->prepare("SELECT Name FROM `customer` WHERE `CustomerID` = ?");
+        $stmt->bind_param("i", $customerID);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        // Fetch the result correctly
+        if ($row = $result->fetch_assoc()) {
+            return $row['Name']; // Return the customer name as a string
+        } else {
+            return "Customer not found"; // Return a default message if not found
+        }
+
+    }
+    
+
+
+
 }
 ?>
