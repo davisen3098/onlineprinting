@@ -186,7 +186,7 @@ $no_supplier = $conn->getSupplierCount();
                     <div class="row row-offcanvas row-offcanvas-left">
 
                         <div class="row mb-3">
-                            <div class="col-xl-3 col-sm-6 py-2">
+                            <div class="col-xl-4 col-sm-6 py-2">
                                 <div class="card bg-success text-white h-25">
                                     <div class="card-body bg-success">
                                         <div class="rotate">
@@ -197,7 +197,7 @@ $no_supplier = $conn->getSupplierCount();
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-3 col-sm-6 py-2">
+                            <div class="col-xl-4 col-sm-6 py-2">
                                 <div class="card text-white bg-danger h-100">
                                     <div class="card-body bg-danger">
                                         <div class="rotate">
@@ -208,7 +208,7 @@ $no_supplier = $conn->getSupplierCount();
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-3 col-sm-6 py-2">
+                            <div class="col-xl-4 col-sm-6 py-2">
                                 <div class="card text-white bg-info h-100">
                                     <div class="card-body bg-info">
                                         <div class="rotate">
@@ -219,7 +219,7 @@ $no_supplier = $conn->getSupplierCount();
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-3 col-sm-6 py-2">
+                            <!-- <div class="col-xl-3 col-sm-6 py-2">
                                 <div class="card text-white bg-warning h-100">
                                     <div class="card-body">
                                         <div class="rotate">
@@ -229,7 +229,7 @@ $no_supplier = $conn->getSupplierCount();
                                         <h1 class="display-4"><?= $no_stock ?></h1>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
  
                         <!--/row-->
