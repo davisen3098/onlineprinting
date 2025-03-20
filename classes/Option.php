@@ -47,4 +47,64 @@ class Option extends DBConnection {
             return ["success" => false, "message" => $e->getMessage()];
         }
     }
+
+    public static function getOptions() {
+        try {
+            $conn = new DBConnection();
+            $stmt = $conn->conn->prepare("SELECT * FROM options");
+            if ($stmt === false) {
+                throw new Exception($conn->conn->error);
+            }
+            $stmt->execute();
+            $result = $stmt->get_result();
+            $options = [];
+            while ($row = $result->fetch_assoc()) {
+                $options[] = $row;
+            }
+            $stmt->close();
+            return $options;
+        } catch (Exception $e) {
+            error_log($e->getMessage());
+            return [];
+        }
+    }
+
+    public static function getOption($id) {
+        try {
+            $conn = new DBConnection();
+            $stmt = $conn->conn->prepare("SELECT * FROM options WHERE id = ?");
+            if ($stmt === false) {
+                throw new Exception($conn->conn->error);
+            }
+            $stmt->bind_param("i", $id);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            $option = $result->fetch_assoc();
+            $stmt->close();
+            return $option;
+        } catch (Exception $e) {
+            error_log($e->getMessage());
+            return [];
+        }
+    }
+
+    public static function updateOption($id, $name, $days, $price) {
+        try {
+            $conn = new DBConnection();
+            $stmt = $conn->conn->prepare("UPDATE options SET name = ?, days = ?, price = ? WHERE id = ?");
+            if ($stmt === false) {
+                throw new Exception($conn->conn->error);
+            }
+            $stmt->bind_param("sidi", $name, $days, $price, $id);
+            $success = $stmt->execute();
+            if ($success === false) {
+                throw new Exception($stmt->error);
+            }
+            $stmt->close();
+            return ["success" => true, "message" => "Option updated successfully"];
+        } catch (Exception $e) {
+            error_log($e->getMessage());
+            return ["success" => false, "message" => $e->getMessage()];
+        }
+    }
 }
