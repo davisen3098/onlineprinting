@@ -2,7 +2,7 @@
 define('DB_SERVER', 'localhost');
 define('DB_USER', 'root');
 define('DB_PASS', '');
-define('DB_NAME', 'final');
+define('DB_NAME', 'pbrms_db');
 class DB_con
 {
     function __construct()
