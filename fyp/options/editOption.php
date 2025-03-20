@@ -203,7 +203,7 @@ if (isset($_POST['submit'])) {
                 <div class="container-fluid px-4">
                     <div class="row justify-content-md-center">
                         <div class="col-md-8">
-                            <h1 class="mt-4 text-center">Update category </h1>
+                            <h1 class="mt-4 text-center">Update option </h1>
                         </div>
                     </div>
                     <div class="row justify-content-md-center">
