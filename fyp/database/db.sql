@@ -227,6 +227,7 @@ DROP TABLE IF EXISTS `order`;
 CREATE TABLE `order` (
   `OrderID` int(11) NOT NULL AUTO_INCREMENT,
   `CustomerID` int(11) DEFAULT NULL,
+  `SupplierID` int(11) DEFAULT NULL,
   `OrderDate` datetime DEFAULT current_timestamp(),
   `Status` varchar(20) DEFAULT NULL,
   `TotalAmount` decimal(10,2) DEFAULT NULL,
@@ -242,16 +243,16 @@ CREATE TABLE `order` (
 LOCK TABLES `order` WRITE;
 /*!40000 ALTER TABLE `order` DISABLE KEYS */;
 INSERT INTO `order` VALUES
-(1,1,'2025-03-20 20:59:51','Processing',150.75,'Credit Card'),
-(2,2,'2025-03-20 20:59:51','Shipped',200.50,'PayPal'),
-(3,3,'2025-03-20 20:59:51','Pending',75.00,'Bank Transfer'),
-(4,4,'2025-03-20 20:59:51','Completed',99.99,'Debit Card'),
-(5,1,'2025-03-20 10:30:00','Processing',150.75,'Credit Card'),
-(6,2,'2025-03-19 14:15:00','Shipped',200.50,'PayPal'),
-(7,3,'2025-03-18 09:45:00','Pending',75.00,'Bank Transfer'),
-(8,4,'2025-03-17 17:20:00','Completed',99.99,'Debit Card'),
-(9,5,'2025-03-16 11:10:00','Cancelled',50.00,'Cash'),
-(10,6,'2025-03-15 20:05:00','Processing',120.30,'Credit Card');
+(1,1,6,'2025-03-20 20:59:51','Pending',150.75,'Credit Card'),
+(2,2,6,'2025-03-20 20:59:51','Shipped',200.50,'PayPal'),
+(3,3,6,'2025-03-20 20:59:51','Pending',75.00,'Bank Transfer'),
+(4,4,6,'2025-03-20 20:59:51','Completed',99.99,'Debit Card'),
+(5,1,6,'2025-03-20 10:30:00','Processing',150.75,'Credit Card'),
+(6,2,6,'2025-03-19 14:15:00','Shipped',200.50,'PayPal'),
+(7,3,6,'2025-03-18 09:45:00','Pending',75.00,'Bank Transfer'),
+(8,4,6,'2025-03-17 17:20:00','Completed',99.99,'Debit Card'),
+(9,5,6,'2025-03-16 11:10:00','Cancelled',50.00,'Cash'),
+(10,6,3,'2025-03-15 20:05:00','Processing',120.30,'Credit Card');
 /*!40000 ALTER TABLE `order` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -353,7 +354,7 @@ CREATE TABLE `supplier` (
   `Address` text DEFAULT NULL,
   PRIMARY KEY (`SupplierID`),
   UNIQUE KEY `Email` (`Email`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -365,7 +366,8 @@ LOCK TABLES `supplier` WRITE;
 INSERT INTO `supplier` VALUES
 (3,'Tamanen Vydelingum','vydelingumkumara023@gmail.com','$2y$10$gaoY2.VF3Ss1wV5.F9Y4keoIGLRpZIMZTuJ.lYhlRIzkJoSY0dYaC','56763433','test','test1112223333444555666'),
 (4,'Tamanen','vydelingumkumara023+2@gmail.com','$2y$10$SZD/QG9A9zclos3600WNPujxfQwhw1bSB7o0f6Vi9qcm2ps8VXq0e','56763433','test','test'),
-(5,'Tamanen','vydelingumkumara023+5@gmail.com','$2y$10$7gWjs51Qu9lAhPP7HPJJBuWcDCtbMpxoByo7d7IHtEL/A81PSGjbu','56763433','test','test');
+(5,'Tamanen','vydelingumkumara023+5@gmail.com','$2y$10$7gWjs51Qu9lAhPP7HPJJBuWcDCtbMpxoByo7d7IHtEL/A81PSGjbu','56763433','test','test'),
+(6,'Tamanen','vydelingumkumara023+4@gmail.com','$2y$10$2STcDI4cGe.fMKu7fXSTZeOUMzDVd2pLA92S6T7ZlQjNayWdOGF8i','56763433','test','test');
 /*!40000 ALTER TABLE `supplier` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -408,4 +410,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-03-20 21:39:04
+-- Dump completed on 2025-03-21  1:05:11
