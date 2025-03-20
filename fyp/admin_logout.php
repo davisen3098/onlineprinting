@@ -1,5 +1,5 @@
 <?php
 session_start();
-unset($_SESSION['aid']);
-unset($_SESSION['aname']);
+unset($_SESSION['admin_id']);
+unset($_SESSION['username']);
 header("location:adminLogin.php");

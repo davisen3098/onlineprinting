@@ -1,15 +1,16 @@
 <?php
 
 include_once('../config.php');
-if (!isset($_SESSION['aid'])) {
+if (!isset($_SESSION['admin_id'])) {
     header('location:adminLogin.php');
 }
 
-$dbh = new DB_con();
-$no_user = $dbh->getUserCount();
-$no_order = $dbh->getOrderCount();
-$no_stock = $dbh->getStockCount();
-$no_sale = $dbh->getSaleCount();
+$conn = new DBConnection();
+$no_user = $conn->getUserCount();
+$no_order = $conn->getOrderCount();
+// $no_stock = $conn->getStockCount();
+$no_supplier = $conn->getSupplierCount();
+// $no_sale = $conn->getSaleCount();
 
 ?>
 <!DOCTYPE html>
@@ -191,7 +192,7 @@ $no_sale = $dbh->getSaleCount();
                                         <div class="rotate">
                                             <i class="fa fa-users fa-2x"></i>
                                         </div>
-                                        <h6 class="text-uppercase">Users</h6>
+                                        <h6 class="text-uppercase">Customers</h6>
                                         <h1 class="display-4"><?= $no_user ?></h1>
                                     </div>
                                 </div>
@@ -202,8 +203,8 @@ $no_sale = $dbh->getSaleCount();
                                         <div class="rotate">
                                             <i class="fa fa-list fa-2x"></i>
                                         </div>
-                                        <h6 class="text-uppercase">Profit</h6>
-                                        <h1 class="display-4">Rs <?= $no_sale ?></h1>
+                                        <h6 class="text-uppercase">Supplier</h6>
+                                        <h1 class="display-4"><?= $no_supplier ?></h1>
                                     </div>
                                 </div>
                             </div>
