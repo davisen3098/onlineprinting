@@ -10,6 +10,7 @@ $no_user = $conn->getUserCount();
 $no_order = $conn->getOrderCount();
 // $no_stock = $conn->getStockCount();
 $no_supplier = $conn->getSupplierCount();
+// $no_sale = $conn->getSaleCount();
 
 ?>
 <!DOCTYPE html>
@@ -60,6 +61,19 @@ $no_supplier = $conn->getSupplierCount();
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             Dashboard
                         </a>
+                        <!-- Sidebar Collapase Product Type -->
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                            Options
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="options/addOption.php">Add new option</a>
+                                <a class="nav-link" href="options/viewOption.php">View option</a>
+                            </nav>
+                        </div>
+                        <!--End of Sidebar Collapase Product Type -->
                         <!-- Sidebar Collapase Product Type -->
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                             <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
