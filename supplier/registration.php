@@ -45,7 +45,7 @@
             </div>
         <?php endif; ?>
 
-        <form action="registration.php" method="POST" class="mt-4">
+        <form action="registration.php" method="POST" class="mt-4" id="registration-form" enctype="multipart/form-data">
             <div class="mb-3">
                 <label for="name" class="form-label">Name:</label>
                 <input type="text" class="form-control" id="name" name="name" required>
@@ -67,6 +67,16 @@
                 <input type="text" class="form-control" id="company" name="company" required>
             </div>
             <div class="mb-3">
+                <label for="company" class="form-label">Business Registration Number:</label>
+                <input type="text" class="form-control" id="brn" name="brn" required>
+            </div>
+            <div class="mb-3">
+              <label for="business_card" class="form-label">Upload Business Card (JPG, PNG, or PDF):</label>
+              <input type="file" class="form-control" id="business_card" name="business_card" accept="image/*,.pdf" required>
+              <br>
+              <img id="preview" src="#" alt="Preview" style="display: none; max-height: 150px;">
+            </div>
+            <div class="mb-3">
                 <label for="address" class="form-label">Address:</label>
                 <textarea class="form-control" id="address" name="address" required></textarea>
             </div>
@@ -77,5 +87,36 @@
     <footer class="text-center mt-5 py-3 bg-light">
       <p>&copy; 2025 Supplier Portal. All rights reserved.</p>
     </footer>
+        <!-- Client-side BRN Validation -->
+    <script>
+      document.getElementById('registration-form').addEventListener('submit', function(e) {
+        const brn = document.getElementById('brn').value.trim();
+        const brnPattern = /^\d{9}$/; // 9-digit BRN
+
+        if (!brnPattern.test(brn)) {
+          alert("Business Registration Number must be exactly 9 digits.");
+          document.getElementById('brn').focus();
+          e.preventDefault();
+        }
+      });
+    </script>
+    <script>
+      document.getElementById('business_card').addEventListener('change', function (e) {
+        const file = e.target.files[0];
+        const preview = document.getElementById('preview');
+
+        if (file && file.type.startsWith('image/')) {
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            preview.src = e.target.result;
+            preview.style.display = 'block';
+          };
+          reader.readAsDataURL(file);
+        } else {
+          preview.style.display = 'none';
+          preview.src = '#';
+        }
+      });
+    </script>
   </body>
 </html>
